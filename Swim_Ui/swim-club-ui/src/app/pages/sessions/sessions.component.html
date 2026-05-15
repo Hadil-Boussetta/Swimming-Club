@@ -1,0 +1,106 @@
+<div class="space-y-6">
+  <!-- Header -->
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-3xl font-bold tracking-tight text-foreground">Training Sessions</h1>
+      <p class="text-muted-foreground mt-1">Manage weekly schedules and lane allocations via drag-and-drop.</p>
+    </div>
+    <div class="flex gap-3">
+      <div class="bg-card border border-border shadow-sm rounded-xl p-1 flex">
+        <button class="px-4 py-1.5 rounded-lg text-sm font-semibold bg-primary text-primary-foreground shadow-sm">Week</button>
+        <button class="px-4 py-1.5 rounded-lg text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors">Month</button>
+      </div>
+      <button class="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2 rounded-xl font-semibold shadow-sm transition-all flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        New Session
+      </button>
+    </div>
+  </div>
+
+  <!-- Calendar Container -->
+  <div class="glass rounded-xl p-6">
+    
+    <!-- Calendar Header (Days) -->
+    <div class="cal-header grid grid-cols-7 gap-4 mb-4">
+      <div class="text-center pb-2 border-b border-border">
+        <p class="text-xs font-bold text-muted-foreground uppercase tracking-widest">Mon</p>
+        <p class="text-2xl font-bold text-foreground mt-1">12</p>
+      </div>
+      <div class="text-center pb-2 border-b border-border">
+        <p class="text-xs font-bold text-muted-foreground uppercase tracking-widest">Tue</p>
+        <p class="text-2xl font-bold text-foreground mt-1">13</p>
+      </div>
+      <div class="text-center pb-2 border-b-2 border-primary relative">
+        <p class="text-xs font-bold text-primary uppercase tracking-widest">Wed</p>
+        <p class="text-2xl font-bold text-foreground mt-1">14</p>
+        <span class="absolute top-0 right-1/4 w-2 h-2 bg-primary rounded-full"></span>
+      </div>
+      <div class="text-center pb-2 border-b border-border">
+        <p class="text-xs font-bold text-muted-foreground uppercase tracking-widest">Thu</p>
+        <p class="text-2xl font-bold text-foreground mt-1">15</p>
+      </div>
+      <div class="text-center pb-2 border-b border-border">
+        <p class="text-xs font-bold text-muted-foreground uppercase tracking-widest">Fri</p>
+        <p class="text-2xl font-bold text-foreground mt-1">16</p>
+      </div>
+      <div class="text-center pb-2 border-b border-border opacity-70">
+        <p class="text-xs font-bold text-muted-foreground uppercase tracking-widest">Sat</p>
+        <p class="text-2xl font-bold text-foreground mt-1">17</p>
+      </div>
+      <div class="text-center pb-2 border-b border-border opacity-70">
+        <p class="text-xs font-bold text-muted-foreground uppercase tracking-widest">Sun</p>
+        <p class="text-2xl font-bold text-foreground mt-1">18</p>
+      </div>
+    </div>
+
+    <!-- Calendar Grid -->
+    <div class="grid grid-cols-7 gap-4 min-h-[500px]" cdkDropListGroup>
+      
+      <!-- Loop dynamically over days -->
+      <div *ngFor="let day of days"
+           class="space-y-3 min-h-[100px] p-2 -mx-2 rounded-xl transition-colors hover:bg-slate-50/50"
+           [class.bg-slate-50]="day === 'Wednesday'"
+           cdkDropList
+           [cdkDropListData]="sessionsByDay[day]"
+           (cdkDropListDropped)="drop($event)">
+           
+        <div *ngFor="let session of sessionsByDay[day]" cdkDrag class="session-card cursor-grab active:cursor-grabbing border rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow bg-white"
+             [ngClass]="{
+               'border-l-4 border-l-blue-500 border-y-blue-100 border-r-blue-100 bg-blue-50/50 text-blue-900': session.type === 'blue',
+               'border-l-4 border-l-purple-500 border-y-purple-100 border-r-purple-100 bg-purple-50/50 text-purple-900': session.type === 'purple',
+               'border-l-4 border-l-emerald-500 border-y-emerald-100 border-r-emerald-100 bg-emerald-50/50 text-emerald-900': session.type === 'emerald',
+               'border-l-4 border-l-amber-500 border-y-amber-100 border-r-amber-100 bg-amber-50/50 text-amber-900': session.type === 'amber',
+               'border-l-4 border-l-rose-500 border-y-rose-100 border-r-rose-100 bg-rose-50/50 text-rose-900': session.type === 'rose',
+               'border-l-4 border-l-slate-400 border-y-slate-200 border-r-slate-200 bg-slate-50 text-slate-700 border-dashed': session.type === 'slate'
+             }">
+          <p class="text-[10px] font-bold mb-1"
+             [ngClass]="{
+               'text-blue-600': session.type === 'blue',
+               'text-purple-600': session.type === 'purple',
+               'text-emerald-600': session.type === 'emerald',
+               'text-amber-600': session.type === 'amber',
+               'text-rose-600': session.type === 'rose',
+               'text-slate-500': session.type === 'slate'
+             }">
+             {{ session.time }}
+          </p>
+          <p class="font-bold text-sm leading-tight">{{ session.title }}</p>
+          <p class="text-xs opacity-70 mt-1" [ngClass]="{'opacity-60': session.type === 'slate'}">{{ session.subtitle }}</p>
+
+          <!-- Drag handle icon (optional, but lets us know it's draggable) -->
+          <div class="absolute top-2 right-2 opacity-0 hover:opacity-100 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Empty state placeholder -->
+        <div *ngIf="sessionsByDay[day] && sessionsByDay[day].length === 0" class="border border-dashed border-border rounded-xl p-3 flex items-center justify-center h-24 opacity-50">
+          <p class="text-xs text-muted-foreground font-medium">Drop here.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+com\swimclub\backend\config\CorsConfig.class
+com\swimclub\backend\dto\SwimmerRequest.class
+com\swimclub\backend\SwimBackendApplication.class
+com\swimclub\backend\exception\ResourceNotFoundException.class
+com\swimclub\backend\model\Squad.class
+com\swimclub\backend\config\DataInitializer.class
+com\swimclub\backend\model\MainStroke.class
+com\swimclub\backend\model\SwimmerStatus.class
+com\swimclub\backend\controller\SwimmerController.class
+com\swimclub\backend\service\SwimmerService.class
+com\swimclub\backend\repository\SwimmerRepository.class
+com\swimclub\backend\exception\DuplicateResourceException.class
+com\swimclub\backend\model\Swimmer$Builder.class
+com\swimclub\backend\model\Swimmer.class
+com\swimclub\backend\dto\SwimmerResponse.class
+com\swimclub\backend\exception\GlobalExceptionHandler.class
+com\swimclub\backend\dto\SwimmerResponse$Builder.class

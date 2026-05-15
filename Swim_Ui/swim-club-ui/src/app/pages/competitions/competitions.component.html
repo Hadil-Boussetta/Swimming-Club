@@ -1,0 +1,202 @@
+<div class="space-y-6">
+  <!-- Header -->
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-3xl font-bold tracking-tight text-slate-800">Competitions</h1>
+      <p class="text-slate-500 mt-1">Manage tournaments, meets, and swimmer registrations.</p>
+    </div>
+    <div class="flex gap-3">
+      <button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 px-4 py-2 rounded-xl font-semibold shadow-sm transition-colors flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+        Filter Mode
+      </button>
+      <button class="bg-gradient-to-r from-pool to-pool-dark hover:from-pool-dark hover:to-pool-deep text-white px-5 py-2 rounded-xl font-semibold shadow-lg shadow-pool/30 transition-all flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        Create Meet
+      </button>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-3 gap-6">
+    <!-- Main Content (2/3 width) -->
+    <div class="col-span-2 space-y-6">
+      
+      <!-- Upcoming Meets Table -->
+      <div class="glass rounded-3xl p-6 border border-slate-200/50 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-pool" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+           Upcoming Meets
+        </h2>
+        
+        <div class="overflow-x-auto rounded-xl border border-slate-100 bg-white/40">
+          <table class="w-full text-left">
+            <thead class="bg-slate-50/50 border-b border-slate-100">
+              <tr>
+                <th class="p-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">Meet Name</th>
+                <th class="p-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">Date & Location</th>
+                <th class="p-3 text-xs font-semibold text-slate-500 uppercase tracking-wider text-center">Registrations</th>
+                <th class="p-3 text-xs font-semibold text-slate-500 uppercase tracking-wider">Status</th>
+                <th class="p-3"></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100/60">
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="p-3">
+                  <p class="font-bold text-slate-800">Summer Regional Qualifiers</p>
+                  <p class="text-[10px] text-slate-500 uppercase tracking-wide">Long Course • 50m</p>
+                </td>
+                <td class="p-3">
+                  <p class="text-sm font-semibold text-slate-700">Aug 15 - 17, 2026</p>
+                  <p class="text-xs text-slate-500 flex items-center mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Aquatics Center
+                  </p>
+                </td>
+                <td class="p-3 text-center">
+                  <div class="flex items-center justify-center -space-x-2">
+                    <img class="w-6 h-6 rounded-full border-2 border-white relative z-30" src="https://i.pravatar.cc/150?img=1" alt="" />
+                    <img class="w-6 h-6 rounded-full border-2 border-white relative z-20" src="https://i.pravatar.cc/150?img=2" alt="" />
+                    <img class="w-6 h-6 rounded-full border-2 border-white relative z-10" src="https://i.pravatar.cc/150?img=3" alt="" />
+                    <div class="w-6 h-6 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[8px] font-bold text-slate-600 relative z-0">+24</div>
+                  </div>
+                </td>
+                <td class="p-3">
+                  <span class="px-2 py-1 bg-emerald-50 text-emerald-600 border border-emerald-100 text-[10px] font-bold rounded">Open</span>
+                </td>
+                <td class="p-3 text-right">
+                  <button class="p-1.5 text-slate-400 hover:text-pool transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50/80 transition-colors">
+                <td class="p-3">
+                  <p class="font-bold text-slate-800">City Sprint Championships</p>
+                  <p class="text-[10px] text-slate-500 uppercase tracking-wide">Short Course • 25m</p>
+                </td>
+                <td class="p-3">
+                  <p class="text-sm font-semibold text-slate-700">Sep 05, 2026</p>
+                  <p class="text-xs text-slate-500 flex items-center mt-0.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Home Pool
+                  </p>
+                </td>
+                <td class="p-3 text-center">
+                  <p class="text-xs font-bold text-slate-600">0 / 100</p>
+                </td>
+                <td class="p-3">
+                  <span class="px-2 py-1 bg-amber-50 text-amber-600 border border-amber-100 text-[10px] font-bold rounded">Draft</span>
+                </td>
+                <td class="p-3 text-right">
+                  <button class="p-1.5 text-slate-400 hover:text-pool transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Past Results -->
+      <div class="glass rounded-3xl p-6 border border-slate-200/50 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+           Past Results
+        </h2>
+        
+        <div class="space-y-3">
+          <div class="bg-white/50 border border-slate-100 p-4 rounded-xl flex items-center justify-between hover:border-pool/30 transition-colors cursor-pointer">
+            <div class="flex items-center gap-4">
+              <div class="bg-slate-100 text-slate-500 font-bold text-center w-12 py-1.5 rounded-lg border border-slate-200">
+                <span class="block text-xs uppercase">Jul</span>
+                <span class="block text-lg leading-tight">22</span>
+              </div>
+              <div>
+                <p class="font-bold text-slate-800">State Championships Finals</p>
+                <p class="text-xs text-slate-500 mt-0.5">Olympic Venue • 45 Swimmers Participated</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-6">
+              <div class="text-center">
+                <p class="text-xs text-slate-500 font-semibold mb-0.5">Medals</p>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-amber-500 font-bold text-sm">🥇 4</span>
+                  <span class="text-slate-400 font-bold text-sm">🥈 2</span>
+                  <span class="text-amber-700 font-bold text-sm">🥉 5</span>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+          
+           <div class="bg-white/50 border border-slate-100 p-4 rounded-xl flex items-center justify-between hover:border-pool/30 transition-colors cursor-pointer">
+            <div class="flex items-center gap-4">
+              <div class="bg-slate-100 text-slate-500 font-bold text-center w-12 py-1.5 rounded-lg border border-slate-200">
+                <span class="block text-xs uppercase">Jun</span>
+                <span class="block text-lg leading-tight">10</span>
+              </div>
+              <div>
+                <p class="font-bold text-slate-800">Junior Development Meet</p>
+                <p class="text-xs text-slate-500 mt-0.5">Home Pool • 120 Swimmers Participated</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-6">
+              <div class="text-center">
+                <p class="text-xs text-slate-500 font-semibold mb-0.5">Medals</p>
+                <div class="flex items-center gap-1.5">
+                  <span class="text-amber-500 font-bold text-sm">🥇 12</span>
+                  <span class="text-slate-400 font-bold text-sm">🥈 18</span>
+                  <span class="text-amber-700 font-bold text-sm">🥉 10</span>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Sidebar Widget (1/3 width) -->
+    <div class="space-y-6">
+      
+      <!-- Top Performers Widget -->
+      <div class="glass rounded-3xl p-6 border border-slate-200/50 shadow-sm bg-gradient-to-br from-white/60 to-pool/5">
+        <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-amber-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a.75.75 0 01.67.41l2.3 4.67 5.15.75a.75.75 0 01.42 1.28l-3.73 3.63.88 5.12a.75.75 0 01-1.09.79L10 16.3l-4.6 2.42a.75.75 0 01-1.09-.79l.88-5.12-3.73-3.63a.75.75 0 01.42-1.28l5.15-.75 2.3-4.67A.75.75 0 0110 2z" clip-rule="evenodd"/></svg>
+           Top Performers
+        </h2>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/150?img=1" class="w-8 h-8 rounded-full border border-slate-200">
+              <div>
+                <p class="text-sm font-bold text-slate-800">Alice Freeman</p>
+                <p class="text-[10px] text-slate-500">Freestyle</p>
+              </div>
+            </div>
+            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">PB -0.5s</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/150?img=11" class="w-8 h-8 rounded-full border border-slate-200">
+              <div>
+                <p class="text-sm font-bold text-slate-800">Mark Johnson</p>
+                <p class="text-[10px] text-slate-500">Butterfly</p>
+              </div>
+            </div>
+            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">PB -1.2s</span>
+          </div>
+           <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <img src="https://i.pravatar.cc/150?img=5" class="w-8 h-8 rounded-full border border-slate-200">
+              <div>
+                <p class="text-sm font-bold text-slate-800">Emma Davis</p>
+                <p class="text-[10px] text-slate-500">Backstroke</p>
+              </div>
+            </div>
+            <span class="text-xs font-bold text-pool bg-pool-light/30 px-2 py-0.5 rounded">Qualified</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
